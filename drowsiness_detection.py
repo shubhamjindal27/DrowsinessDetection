@@ -8,14 +8,14 @@ import cv2
 import os
 from keras.models import load_model
 import numpy as np
-from pygame import mixer
+#from pygame import mixer
 import time
 from flask import Flask, render_template, Response, redirect
 
 app = Flask(__name__)
 
-mixer.init()
-sound = mixer.Sound('alarm.wav')
+#mixer.init()
+#sound = mixer.Sound('alarm.wav')
 
 face = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_alt.xml')
 leye = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_lefteye_2splits.xml')
@@ -32,7 +32,7 @@ sound_playing = False
 
 def generate_frames():
     global camera, sound, sound_playing, display_video
-    mixer.init()
+    #mixer.init()
     score = 0
     rpred = [99]
     lpred = [99]
@@ -94,7 +94,7 @@ def generate_frames():
                 cv2.imwrite(os.path.join(path,'image.jpg'),frame)
                 if not sound_playing:
                     try:
-                        sound.play(loops=-1)
+                        #sound.play(loops=-1)
                         sound_playing = True
                     except:  # isplaying = False
                         pass
@@ -106,7 +106,7 @@ def generate_frames():
                         thicc = thicc-2
                 cv2.rectangle(frame,(0,0),(width,height),(0,0,255),thicc)
             else:
-                sound.stop()
+                #sound.stop()
                 sound_playing = False
             
             ret, buffer = cv2.imencode('.jpg', frame)
@@ -138,16 +138,9 @@ def stop():
         camera.release()
         camera = None
         display_video = False
-        mixer.quit()
+        #mixer.quit()
         sound_playing = False
     return redirect('/')
 
 if __name__ == "__main__":
     app.run()
-
-
-# In[ ]:
-
-
-
-
