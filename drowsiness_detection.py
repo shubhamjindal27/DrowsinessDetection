@@ -15,9 +15,10 @@ face = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_al
 leye = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_lefteye_2splits.xml')
 reye = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_righteye_2splits.xml')
 
-path = os.path.abspath('cnncat2.h5')
+path = os.getcwd()
+path = os.path.join(path, 'cnncat2.h5')
 model = load_model(path)
-#path = os.getcwd()
+
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 
 camera = None
