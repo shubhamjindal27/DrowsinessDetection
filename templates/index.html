@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Drowsiness Detection</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan='2'><h1>Drowsiness Detection App</h1></td>
+		</tr>
+		<tr>
+			<td>
+			<div class='border'>
+				{% if display_video %}
+				<img src="{{ url_for('video') }}" width = auto/>
+				{% else %}
+				{% endif %}
+			</div>
+			</td>
+			<td align=center width='400px'>
+			<div class='buttons' align=center>
+				<a class='start_button' href="{{ url_for('start') }}" align=center>Start</a>
+				<br><br><br><br><br>
+				<a class='stop_button' href="{{ url_for('stop') }}" align=center>Stop</a>
+			</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
