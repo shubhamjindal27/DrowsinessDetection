@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'drowsinessdetection'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EB2C0704444D4669BA016FF8C3DD17D1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_41AFB044C9D14674913B243F481A7280 }}
