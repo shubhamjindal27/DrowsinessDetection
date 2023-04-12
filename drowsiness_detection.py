@@ -1,5 +1,5 @@
 import cv2
-import os
+#import os
 from keras.models import load_model
 import numpy as np
 #from pygame import mixer
@@ -15,9 +15,9 @@ face = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_al
 leye = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_lefteye_2splits.xml')
 reye = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_righteye_2splits.xml')
 
-path = os.getcwd()
-path = os.path.join(path, 'cnncat2.h5')
-model = load_model(path)
+#path = os.getcwd()
+#path = os.path.join(path, 'cnncat2.h5')
+model = load_model('cnncat2.h5')
 
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 
